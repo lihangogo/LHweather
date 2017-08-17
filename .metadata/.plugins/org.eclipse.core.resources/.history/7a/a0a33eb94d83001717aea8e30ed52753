@@ -1,0 +1,109 @@
+package com.lihangogo.lhweather.entity.suggestion;
+
+/**
+ * @author lihan
+ */
+public class Suggestion {
+	/*
+	 * 空气指数
+	 */
+	private AirIndex air;
+	
+	/*
+	 * 舒适度指数
+	 */
+	private ComfortIndex comf;
+	
+	/*
+	 * 穿衣指数
+	 */
+	private DressingIndex drsg;
+	
+	/*
+	 * 
+	 */
+	private UvIndex uv;
+	
+	/*
+	 * 
+	 */
+	private	CarWashIndex cw;
+	
+	/*
+	 * 
+	 */
+	private TourismIndex trav;
+	
+	/*
+	 * 
+	 */
+	private FluIndex flu;
+	
+	/*
+	 * 
+	 */
+	private SportIndex sport;
+	
+	public Suggestion(ComfortIndex comf, DressingIndex drsg, UvIndex uv, CarWashIndex cw,
+			TourismIndex trav, FluIndex flu, SportIndex sport) {
+		super();
+		this.comf = comf;
+		this.drsg = drsg;
+		this.uv = uv;
+		this.cw = cw;
+		this.trav = trav;
+		this.flu = flu;
+		this.sport = sport;
+	}
+	public Suggestion() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "LifeSuggestion [comf=" + comf + ", drsg=" + drsg + ", uv=" + uv + ", cw=" + cw + ", trav=" + trav
+				+ ", flu=" + flu + ", sport=" + sport + "]";
+	}
+	public ComfortIndex getComf() {
+		return comf;
+	}
+	public void setComf(ComfortIndex comf) {
+		this.comf = comf;
+	}
+	public DressingIndex getDrsg() {
+		return drsg;
+	}
+	public void setDrsg(DressingIndex drsg) {
+		this.drsg = drsg;
+	}
+	public UvIndex getUv() {
+		return uv;
+	}
+	public void setUv(UvIndex uv) {
+		this.uv = uv;
+	}
+	public CarWashIndex getCw() {
+		return cw;
+	}
+	public void setCw(CarWashIndex cw) {
+		this.cw = cw;
+	}
+	public TourismIndex getTrav() {
+		return trav;
+	}
+	public void setTrav(TourismIndex trav) {
+		this.trav = trav;
+	}
+	public FluIndex getFlu() {
+		return flu;
+	}
+	public void setFlu(FluIndex flu) {
+		this.flu = flu;
+	}
+	public SportIndex getSport() {
+		return sport;
+	}
+	public void setSport(SportIndex sport) {
+		this.sport = sport;
+	}
+	
+}

@@ -1,0 +1,78 @@
+package com.lihangogo.lhweather.entity.daily_forecast;
+
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * 
+ * @author lihan
+ */
+public class DayAndNightWeather {
+	/*
+	 * 白天天气状况代码
+	 */
+	@SerializedName("code_d")
+	private int code_day;
+	/*
+	 * 夜间天气状况代码
+	 */
+	@SerializedName("code_n")
+	private int code_night;
+	/*
+	 * 白天天气状况描述
+	 */
+	@SerializedName("txt_d")
+	private String txt_day;
+	/*
+	 * 夜间天气状况描述
+	 */
+	@SerializedName("txt_n")
+	private String txt_night;
+	
+	
+	public int getCode_day() {
+		return code_day;
+	}
+
+
+	public void setCode_day(int code_day) {
+		this.code_day = code_day;
+	}
+
+
+	public int getCode_night() {
+		return code_night;
+	}
+
+
+	public void setCode_night(int code_night) {
+		this.code_night = code_night;
+	}
+
+
+	public String getTxt_day() {
+		return txt_day;
+	}
+
+
+	public void setTxt_day(String txt_day) {
+		this.txt_day = txt_day;
+	}
+
+
+	public String getTxt_night() {
+		return txt_night;
+	}
+
+
+	public void setTxt_night(String txt_night) {
+		this.txt_night = txt_night;
+	}
+
+
+	@Override
+	public String toString() {
+		return "DayAndNightWeather [code_d=" + code_d + ", code_n=" + code_n + ", txt_d=" + txt_d + ", txt_n=" + txt_n
+				+ "]";
+	}
+	
+}

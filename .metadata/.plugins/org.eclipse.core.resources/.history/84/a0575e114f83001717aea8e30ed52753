@@ -1,0 +1,5 @@
+package com.lihangogo.lhweather.entity.alarms;
+
+public class AlarmsIndex {
+
+}

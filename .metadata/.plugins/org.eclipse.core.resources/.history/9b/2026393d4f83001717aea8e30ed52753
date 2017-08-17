@@ -1,0 +1,13 @@
+package com.lihangogo.lhweather.entity.alarms;
+
+/**
+ * 
+ * @author lihan
+ */
+public class AlarmsIndex {
+	private String level;
+	private String stat;
+	private String title;
+	private String txt;
+	private String type;
+}
