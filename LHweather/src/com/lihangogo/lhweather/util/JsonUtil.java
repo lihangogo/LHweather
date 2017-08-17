@@ -1,5 +1,38 @@
 package com.lihangogo.lhweather.util;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import android.util.Log;
+
 public class JsonUtil {
-	
+	private JsonUtil(){
+	}
+	public static String getJson(){
+		StringBuilder response=null;
+		try {
+			URL url=new URL("https://free-api.heweather.com/v5/weather?city=yuncheng&key="
+					+ "18b24e9830804182b9d804d90dd1b006");
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection.setConnectTimeout(8000);
+			connection.setReadTimeout(8000);
+			connection.connect();				
+			InputStream is=connection.getInputStream();
+			BufferedReader reader=new BufferedReader(
+					new InputStreamReader(is,"UTF-8"));
+			response=new StringBuilder();
+			String line;
+			while((line=reader.readLine())!=null){
+				response.append(line).append("\r\n");		
+			}	
+			reader.close();	
+			Log.e("bb",response.toString());
+		} catch (Exception e) {
+			Log.e("11","11");
+		}
+		return response.toString();
+	}
 }

@@ -1,29 +1,38 @@
 package com.lihangogo.lhweather.entity;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
 
+/**
+ * 
+ * @author lihan
+ */
 public class QueryResultForWeatherFirst {
-	List<QueryWeatherResult> HeWeatherdataservice;
+	/*
+	 * 最终天气集合
+	 */
+	@SerializedName("HeWeather5")
+	private List<QueryWeatherResult> theWeather;
 
-	public QueryResultForWeatherFirst(List<QueryWeatherResult> heWeatherdataservice) {
+	public QueryResultForWeatherFirst(List<QueryWeatherResult> theWeather) {
 		super();
-		HeWeatherdataservice = heWeatherdataservice;
+		this.theWeather = theWeather;
 	}
 
 	public QueryResultForWeatherFirst() {
 		super();
 	}
 
-	public List<QueryWeatherResult> getHeWeatherdataservice() {
-		return HeWeatherdataservice;
+	public List<QueryWeatherResult> getTheWeather() {
+		return theWeather;
 	}
 
-	public void setHeWeatherdataservice(List<QueryWeatherResult> heWeatherdataservice) {
-		HeWeatherdataservice = heWeatherdataservice;
+	public void setTheWeather(List<QueryWeatherResult> theWeather) {
+		this.theWeather = theWeather;
 	}
 
 	@Override
 	public String toString() {
-		return "QueryResultForWeatherFirst [HeWeatherdataservice=" + HeWeatherdataservice + "]";
+		return "QueryResultForWeatherFirst [theWeather=" + theWeather + "]";
 	}
 }
