@@ -1,0 +1,5 @@
+package com.lihangogo.lhweather.entity.suggestion;
+
+public class AirIndex {
+
+}

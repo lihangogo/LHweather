@@ -1,0 +1,9 @@
+package com.lihangogo.lhweather.entity.suggestion;
+
+/**
+ * 
+ * @author lihan
+ */
+public class AirIndex {
+
+}

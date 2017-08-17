@@ -1,0 +1,19 @@
+package com.lihangogo.lhweather.entity.hourly_forecast;
+
+/**
+ * 
+ * @author lihan
+ *
+ */
+public class HourlyForecastCond {
+
+	/*
+	 * 天气状况代码
+	 */
+	private String code;
+	
+	/*
+	 * 数据详情
+	 */
+	private String txt;
+}

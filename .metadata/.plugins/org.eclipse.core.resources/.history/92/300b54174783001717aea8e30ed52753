@@ -1,0 +1,10 @@
+package com.lihangogo.lhweather.entity.hourly_forecast;
+
+/**
+ * 
+ * @author lihan
+ *
+ */
+public class HourlyForecastCond {
+
+}

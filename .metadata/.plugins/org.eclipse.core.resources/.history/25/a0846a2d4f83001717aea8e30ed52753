@@ -1,0 +1,9 @@
+package com.lihangogo.lhweather.entity.alarms;
+
+/**
+ * 
+ * @author lihan
+ */
+public class AlarmsIndex {
+	
+}

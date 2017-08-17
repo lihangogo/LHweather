@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.google.gson.annotations.SerializedName"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.daily_forecast.Wind"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.hourly_forecast.HourlyForecastCond"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.suggestion.AirIndex"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.alarms.AlarmsIndex"/>
+</qualifiedTypeNameHistroy>
