@@ -1,1 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"        
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/lihan"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="2"
+            android:background="#F800FFFF"
+            android:textColor="#F8F8FF00" />   
+
+        <RelativeLayout
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <View
+                android:id="@+id/aa"
+                android:layout_width="0dp"
+                android:layout_height="0dp"                
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/lihan1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/aa"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:background="#F8FF00FF"/>
+
+            <TextView
+                android:id="@+id/lihan2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/aa"
+                android:layout_marginTop="10dp"
+                android:background="#F8FFFF00"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/lihan3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#F80000FF"
+            android:textColor="#F8F8FF00"/>
+    </LinearLayout>
+	<TextView
+        android:layout_width="fill_parent"  
+        android:layout_height="1dp"  
+        android:background="#FF000000"/>
+</LinearLayout>
+
+
+
+
+30977458+lihangogo@users.noreply.github.com
