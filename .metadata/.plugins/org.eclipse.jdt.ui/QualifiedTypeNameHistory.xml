@@ -5,4 +5,23 @@
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.hourly_forecast.HourlyForecastCond"/>
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.suggestion.AirIndex"/>
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.alarms.AlarmsIndex"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="android.graphics.drawable.Drawable"/>
+<fullyQualifiedTypeName name="com.example.lhweather.R.layout"/>
+<fullyQualifiedTypeName name="com.example.lhweather.R.id"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.string"/>
+<fullyQualifiedTypeName name="com.example.lhweather.R"/>
+<fullyQualifiedTypeName name="com.example.lhweather.R.string"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.QueryResultForWeatherFirst"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.util.JsonAnalysis.WeatherHandler"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.util.JsonAnalysis.WeatherThread"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.util.JsonAnalysis"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.MainActivity"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
 </qualifiedTypeNameHistroy>

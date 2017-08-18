@@ -1,0 +1,40 @@
+package com.lihangogo.lhweather.util;
+
+import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+
+import com.lihangogo.lhweather.activity.MainActivity;
+import com.lihangogo.lhweather.entity.QueryResultForWeatherFirst;
+
+/**
+ * 
+ * @author lihan
+ */
+public class JsonAnalysis {
+	public Context context;
+	
+	public JsonAnalysis(Context context){
+		this.context=context;
+	}
+	
+	public QueryResultForWeatherFirst getWeather(String city,String lang){
+		QueryResultForWeatherFirst weather=null;
+		
+		return weather;
+	}
+	class WeatherHandler extends Handler{
+		
+	}
+	class WeatherThread extends Thread{
+		@Override
+		public void run() {
+			super.run();
+			String str=DataUtil.getWeather(context,"beijing","zh");
+			Message mss=new Message();
+			mss.obj=str;
+			
+		}
+	}
+	
+}
