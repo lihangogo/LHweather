@@ -1,9 +1,15 @@
 package com.lihangogo.lhweather.entity.aqi;
 
+import java.io.Serializable;
+
 /**
  * @author lihan
  */
-public class AirQualityIndex {
+public class AirQualityIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8317792029344676936L;
 	private AQICity city;
 
 	public AirQualityIndex() {

@@ -1,13 +1,20 @@
 package com.lihangogo.lhweather.entity.daily_forecast;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * 风力情况
  * @author lihan
  */
-public class Wind {
+public class Wind implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8984508311149336485L;
+
 	/*
 	 * 风向（360度）
 	 */

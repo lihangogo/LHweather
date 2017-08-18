@@ -1,5 +1,6 @@
 package com.lihangogo.lhweather.entity;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
@@ -7,7 +8,11 @@ import com.google.gson.annotations.SerializedName;
  * 
  * @author lihan
  */
-public class QueryResultForWeatherFirst {
+public class QueryResultForWeatherFirst implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3291591146292478623L;
 	/*
 	 * 最终天气集合
 	 */

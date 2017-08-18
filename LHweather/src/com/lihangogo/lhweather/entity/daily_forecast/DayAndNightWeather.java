@@ -1,12 +1,18 @@
 package com.lihangogo.lhweather.entity.daily_forecast;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * 天气状况
  * @author lihan
  */
-public class DayAndNightWeather {
+public class DayAndNightWeather implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7667971592812435213L;
 	/*
 	 * 白天天气状况代码
 	 */

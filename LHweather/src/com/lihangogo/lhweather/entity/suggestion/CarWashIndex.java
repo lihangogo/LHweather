@@ -1,10 +1,16 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author lihan
  */
-public class CarWashIndex {
+public class CarWashIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6584576620284996605L;
 	/*
 	 * 简介
 	 */

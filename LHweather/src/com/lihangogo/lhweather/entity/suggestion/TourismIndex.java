@@ -1,6 +1,12 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
-public class TourismIndex {
+import java.io.Serializable;
+
+public class TourismIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7807617351783348020L;
 	/**
 	 * 
 	 */

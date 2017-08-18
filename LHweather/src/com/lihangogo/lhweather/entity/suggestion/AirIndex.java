@@ -1,10 +1,16 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author lihan
  */
-public class AirIndex {
+public class AirIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2300752397517123275L;
 	/*
 	 * 简介
 	 */

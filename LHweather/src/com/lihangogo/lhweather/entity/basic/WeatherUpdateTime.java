@@ -1,9 +1,15 @@
 package com.lihangogo.lhweather.entity.basic;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
 
-public class WeatherUpdateTime {
+public class WeatherUpdateTime implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8816455953216362442L;
 	/**
 	 * 当地时间
 	 */

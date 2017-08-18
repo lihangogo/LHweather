@@ -1,12 +1,18 @@
 package com.lihangogo.lhweather.entity.daily_forecast;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * 天文指数
  * @author lihan
  */
-public class SunRSTime {
+public class SunRSTime implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1527385680145202819L;
 	/*
 	 * 日出时间
 	 */

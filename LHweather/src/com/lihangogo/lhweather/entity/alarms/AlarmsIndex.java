@@ -1,10 +1,17 @@
 package com.lihangogo.lhweather.entity.alarms;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author lihan
  */
-public class AlarmsIndex {
+public class AlarmsIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1437964929175546021L;
+
 	/*
 	 * 预警级别
 	 */

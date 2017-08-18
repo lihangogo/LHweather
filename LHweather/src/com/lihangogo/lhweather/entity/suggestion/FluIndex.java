@@ -1,6 +1,12 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
-public class FluIndex {
+import java.io.Serializable;
+
+public class FluIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6882815510310034615L;
 	/**
 	 * 
 	 */

@@ -1,6 +1,12 @@
 package com.lihangogo.lhweather.entity.now;
 
-public class WindInfo {
+import java.io.Serializable;
+
+public class WindInfo implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8708846630014279099L;
 	/**
 	 * 
 	 */

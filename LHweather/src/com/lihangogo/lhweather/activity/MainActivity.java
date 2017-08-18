@@ -1,5 +1,7 @@
 package com.lihangogo.lhweather.activity;
 
+import java.io.Serializable;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +27,6 @@ public class MainActivity extends BaseObserverActivity {
 		
 		task=new JsonAnalysisTask(this);
 		task.execute();
-		
 	}
 	
 	@Override
@@ -39,7 +40,6 @@ public class MainActivity extends BaseObserverActivity {
 
 	@Override
 	protected String[] getObserverEventType() {
-		// TODO Auto-generated method stub
 		return new String[]{
 			EventType.UPDATE_MAIN	
 		};
@@ -49,24 +49,28 @@ public class MainActivity extends BaseObserverActivity {
 		View view=findViewById(R.id.centerImg);
 		AlphaAnimation aa=new AlphaAnimation(1, 0);
 		aa.setDuration(2000);
-		Log.e("a3","a3");
+		//Log.e("a3","a3");
 		view.startAnimation(aa);
 		aa.setAnimationListener(new AnimationListener() {	
 			@Override
 			public void onAnimationStart(Animation arg0) {	
-				Log.e("a2","a2");
+				//Log.e("a2","a2");
 			}
 			
 			@Override
 			public void onAnimationRepeat(Animation arg0) {	
+				
 			}
 			
 			@Override
 			public void onAnimationEnd(Animation arg0) {
 				Intent intent=new Intent();
-				intent.setClass(MainActivity.this, theActivity.class);
+				intent.setClass(MainActivity.this, WeatherActivity.class);
+				Bundle bundle=new Bundle();
+				bundle.putSerializable("weather", weather);
+				intent.putExtras(bundle);
 				startActivity(intent);
-				Log.e("a1","1");
+				MainActivity.this.finish();
 			}
 		});
 	}

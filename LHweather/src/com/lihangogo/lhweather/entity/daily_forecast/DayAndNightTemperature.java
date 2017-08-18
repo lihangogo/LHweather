@@ -1,10 +1,16 @@
 package com.lihangogo.lhweather.entity.daily_forecast;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author lihan
  */
-public class DayAndNightTemperature {
+public class DayAndNightTemperature implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 930728518676649271L;
 	/*
 	 * 最高温度
 	 */

@@ -1,9 +1,15 @@
 package com.lihangogo.lhweather.entity.daily_forecast;
 
+import java.io.Serializable;
+
 /*
  * @author lihan
  */
-public class WeatherForecast {
+public class WeatherForecast implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5530606500521291030L;
 	/*
 	 * 天文指数
 	 */

@@ -1,12 +1,18 @@
 package com.lihangogo.lhweather.entity.aqi;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * 空气质量指数详情
  * @author lihan
  */
-public class AQICity {
+public class AQICity implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4739846964815929351L;
 	/*
 	 * 空气质量指数
 	 */

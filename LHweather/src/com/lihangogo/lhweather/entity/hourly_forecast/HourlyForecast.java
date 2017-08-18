@@ -1,11 +1,18 @@
 package com.lihangogo.lhweather.entity.hourly_forecast;
 
+import java.io.Serializable;
+
 import com.lihangogo.lhweather.entity.daily_forecast.Wind;
 
 /**
  * @author lihan
  */
-public class HourlyForecast {
+public class HourlyForecast implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4758789983714827676L;
+
 	/*
 	 * 天气状况
 	 */

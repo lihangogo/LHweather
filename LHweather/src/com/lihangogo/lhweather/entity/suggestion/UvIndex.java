@@ -1,6 +1,12 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
-public class UvIndex {
+import java.io.Serializable;
+
+public class UvIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5255015021328625729L;
 	/**
 	 * 
 	 */

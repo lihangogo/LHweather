@@ -1,11 +1,18 @@
 package com.lihangogo.lhweather.entity.now;
 
+import java.io.Serializable;
+
 import com.lihangogo.lhweather.entity.daily_forecast.Wind;
 
 /**
  * @author lihan
  */
-public class CurrentTimeWeather {
+public class CurrentTimeWeather implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -824861825088234319L;
+
 	/*
 	 * 天气状况
 	 */

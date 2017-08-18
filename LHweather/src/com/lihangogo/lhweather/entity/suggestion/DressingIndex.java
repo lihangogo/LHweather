@@ -1,10 +1,17 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author lihan
  */
-public class DressingIndex {
+public class DressingIndex implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2890557056610159678L;
+
 	/*
 	 * 简介
 	 */

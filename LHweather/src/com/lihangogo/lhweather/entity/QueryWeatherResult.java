@@ -1,5 +1,6 @@
 package com.lihangogo.lhweather.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.lihangogo.lhweather.entity.alarms.AlarmsIndex;
@@ -10,7 +11,11 @@ import com.lihangogo.lhweather.entity.hourly_forecast.HourlyForecast;
 import com.lihangogo.lhweather.entity.now.CurrentTimeWeather;
 import com.lihangogo.lhweather.entity.suggestion.Suggestion;
 
-public class QueryWeatherResult {
+public class QueryWeatherResult implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3081141316033938024L;
 	private List<AlarmsIndex> alarms;
 	private AirQualityIndex aqi;
 	private CityBasicInfo basic;	

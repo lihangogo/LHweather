@@ -1,10 +1,16 @@
 package com.lihangogo.lhweather.entity.now;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author lihan
  */
-public class WeatherConditions {
+public class WeatherConditions implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 199149429178230724L;
 	/*
 	 * 天气代码
 	 */

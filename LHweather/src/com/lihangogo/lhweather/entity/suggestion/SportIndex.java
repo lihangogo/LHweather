@@ -1,6 +1,8 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
-public class SportIndex {
+import java.io.Serializable;
+
+public class SportIndex implements Serializable{
 	/**
 	 * 
 	 */

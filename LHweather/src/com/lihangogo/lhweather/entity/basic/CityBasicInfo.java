@@ -1,11 +1,17 @@
 package com.lihangogo.lhweather.entity.basic;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * @author lihan
  */
-public class CityBasicInfo {
+public class CityBasicInfo implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -732397794684008511L;
 	/*
 	 * 城市名
 	 */

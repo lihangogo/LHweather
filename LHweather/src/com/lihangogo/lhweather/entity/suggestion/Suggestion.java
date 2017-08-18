@@ -1,9 +1,16 @@
 package com.lihangogo.lhweather.entity.suggestion;
 
+import java.io.Serializable;
+
 /**
  * @author lihan
  */
-public class Suggestion {
+public class Suggestion implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6485878819956807543L;
+
 	/*
 	 * 空气指数
 	 */
