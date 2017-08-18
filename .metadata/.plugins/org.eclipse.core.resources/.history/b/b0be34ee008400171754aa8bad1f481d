@@ -1,0 +1,40 @@
+package com.lihangogo.lhweather.util;
+
+import android.content.Context;
+import android.os.AsyncTask;
+
+public class JsonAnalysisTask extends AsyncTask<Integer, Double, String> {
+	private Context context;
+	public JsonAnalysisTask(Context context){
+		this.context=context;
+	}
+	@Override
+	protected String doInBackground(Integer... arg0) {
+		String str=DataUtil.getWeather(context,"beijing","zh");
+		return str;
+	}
+
+	@Override
+	protected void onCancelled() {
+		// TODO Auto-generated method stub
+		super.onCancelled();
+	}
+
+	@Override
+	protected void onPostExecute(String result) {
+		// TODO Auto-generated method stub
+		super.onPostExecute(result);
+	}
+
+	@Override
+	protected void onPreExecute() {
+		// TODO Auto-generated method stub
+		super.onPreExecute();
+	}
+
+	@Override
+	protected void onProgressUpdate(Double... values) {
+		// TODO Auto-generated method stub
+		super.onProgressUpdate(values);
+	}
+}

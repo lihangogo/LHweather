@@ -1,0 +1,5 @@
+package com.lihangogo.lhweather.ObserverPattern;
+
+public class EventType {
+
+}

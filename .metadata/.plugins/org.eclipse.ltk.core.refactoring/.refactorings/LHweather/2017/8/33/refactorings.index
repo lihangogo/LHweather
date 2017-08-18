@@ -19,3 +19,9 @@
 1502975056479	Rename type 'UltravioletRayIndex'
 1502975098019	Rename type 'TravelIndex'
 1503020574299	Rename type 'JsonUtil'
+1503051049889	Delete element
+1503052094462	Rename type 'JsonAnalysis'
+1503052938439	Delete element
+1503055360882	Rename compilation unit 'SubjectInterface.java'
+1503055818796	Rename type 'EventObserver'
+1503056392544	Rename package 'com.lihangogo.lhweather.inter'

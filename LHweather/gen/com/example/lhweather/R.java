@@ -72,11 +72,13 @@ public final class R {
         public static final int p999=0x7f020034;
     }
     public static final class id {
-        public static final int action_settings=0x7f080001;
+        public static final int action_settings=0x7f080002;
+        public static final int centerImg=0x7f080001;
         public static final int layout1=0x7f080000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int weather=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f070000;

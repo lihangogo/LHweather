@@ -1,0 +1,427 @@
+package com.lihangogo.lhweather.util;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
+import android.support.v4.widget.TextViewCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+import java.util.HashMap;
+import java.util.List;
+
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.location.Poi;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.imuliu.simpleweather.weather.widget.WeatherItem;
+import com.imuliu.simpleweather.weather.widget.WeatnerChartView;
+
+import okhttp3.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+
+
+public class MainActivity extends Activity implements View.OnClickListener{
+    private TextView tvWeather;
+    private String results = "天气：";
+    private String current_cloud;//当前云况
+    private TextView tvcurrentcloud;
+    private String current_posiition;//当前位置;
+    private TextView tvcurrentposiition;
+    private String current_dayWeather;//当前天气
+    private TextView tvcurrentDayWeather;
+    private String tomorrow_weather;
+    private TextView tvtomorrowWeather;
+    private String[] late_weather = new String[24];
+    private TextView[] tv_lateWweather = new TextView[24];
+    private String[] futureDay_weather = new String[16];
+    private TextView[] tv_futureDayWeather = new TextView[16];
+    private String life_guide[] = new String[13];
+    private TextView tv_lifeGuide[] = new TextView[13];
+
+    private Button btnAddCity;
+    private Button btnPoi;
+    private SwipeRefreshLayout srFreshWeather;
+    private Handler handler = new Handler();
+
+    public LocationClient mLocationClient = null;
+    public BDLocationListener myListener = new MyLocationListener();
+    public String cityName = ".";
+    private WeatnerChartView chart1;
+    private WeatnerChartView chart2;
+    private ArrayList<WeatherItem> list= new ArrayList<WeatherItem>();
+    private Intent i;
+
+    private  boolean ifpoi = false;
+
+    private OkHttpClient client = new OkHttpClient.Builder().cookieJar(new CookieJar() {
+        private final HashMap<String, List<Cookie>> cookieStore = new HashMap<String, List<Cookie>>();
+
+        @Override
+        public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
+            cookieStore.put(url.host(), cookies);
+        }
+
+        @Override
+        public List<Cookie> loadForRequest(HttpUrl url) {
+            List<Cookie> cookies = cookieStore.get(url.host());
+            return cookies != null ? cookies : new ArrayList<Cookie>();
+        }
+    }).build();
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        initParameter();//初始化
+        startLocate();//定位
+
+
+    }
+
+    private void initParameter(){
+
+        btnAddCity = (Button)findViewById(R.id.btn_addcity);
+        btnAddCity.setOnClickListener(this);
+        btnPoi = (Button)findViewById(R.id.btn_poi);
+        btnPoi.setOnClickListener(this);
+        srFreshWeather = (SwipeRefreshLayout)findViewById(R.id.sr_swiperefreshlayout);
+        srFreshWeather.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(getApplicationContext(), "正在刷新", Toast.LENGTH_SHORT).show();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getJson();
+                        srFreshWeather.setRefreshing(false);
+                    }
+                }, 2000);
+                printINFO();
+
+            }
+        });
+
+
+        tvWeather = (TextView) findViewById(R.id.textView);
+        tvcurrentposiition = (TextView) findViewById(R.id.currentPoistion);
+        tvcurrentcloud = (TextView) findViewById(R.id.currentWind);
+        tvcurrentDayWeather = (TextView) findViewById(R.id.tvtodayWeather);
+        tvtomorrowWeather = (TextView) findViewById(R.id.tvtomorrowWeather);
+
+        chart1= (WeatnerChartView) findViewById(R.id.weather_char1);
+
+//        for(int i = 0; i<24 ; i++)
+//            tv_lateWweather[i] = (TextView) findViewById(R.id.tvFutureWeather1 + i);
+        for(int i = 0;i<6;i++)
+            tv_futureDayWeather[i] = (TextView) findViewById(R.id.tvFutureDayWeather1 + i);
+        //////////生活指数
+        for(int i = 0;i<13;i++)
+            tv_lifeGuide[i] = (TextView)findViewById(R.id.tvlifeguide1 + i);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        int requestcode;
+        switch (v.getId()){
+            case R.id.btn_addcity:
+                i =new Intent(MainActivity.this,AddCityActivity.class);
+                requestcode = 1;
+                startActivityForResult(i,requestcode);
+                break;
+            case R.id.btn_poi:
+                ifpoi = false;
+                Toast.makeText(getApplicationContext(), "定位中", Toast.LENGTH_SHORT).show();
+                //startLocate();
+                break;
+
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        // 根据上面发送过去的请求吗来区别
+        switch (requestCode) {
+            case 1:
+                cityName = data.getStringExtra("cityName");
+                getJson();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                printINFO();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void printINFO(){
+        ///当前天气状况
+        tvWeather.setText(results);
+        tvcurrentposiition.setText(current_posiition);
+        tvcurrentcloud.setText("  " + current_cloud + "  ");
+        ///当天天气状况
+        tvcurrentDayWeather.setText(current_dayWeather);
+        ///明天天气状况
+        tvtomorrowWeather.setText(tomorrow_weather);
+        ////五小时天气预报
+//                for(int i = 0;i<24;i++){
+//                    tv_lateWweather[i].setTextColor(Color.rgb(0,0,0));
+//                    tv_lateWweather[i].setText(late_weather[i]);
+//                }
+
+        /////几天天气预报
+        for(int i = 0;i<6;i++){
+            tv_futureDayWeather[i].setTextColor(Color.rgb(0,0,0));
+            tv_futureDayWeather[i].setText(futureDay_weather[i]);
+        }
+        ////////生活指数
+        for(int i = 0;i<13;i++){
+            // tv_lifeGuide[i].setTextColor(Color.rgb(0,0,0));
+            tv_lifeGuide[i].setText(life_guide[i]);
+        }
+
+
+        chart1.SetTuView(list,"");//单位: 摄氏度
+        chart1.invalidate();
+    }
+
+
+    private void updateLocalCache(String weatherInfoStr){
+        try{
+            JsonParser parse = new JsonParser();
+            JsonObject jsonObject  = (JsonObject) parse.parse(weatherInfoStr);
+            ///////当前天气
+            JsonObject currentWeather = jsonObject.get("observe").getAsJsonObject();
+            results = currentWeather.get("temp").getAsString();//当前温度
+            current_cloud = currentWeather.get("wthr").getAsString();
+            current_posiition = jsonObject.get("meta").getAsJsonObject().get("city").getAsString();
+
+            /////////当天天气
+            current_dayWeather = "今天   " + jsonObject.get("forecast15").getAsJsonArray().get(1).getAsJsonObject().get("low") + "~"
+                    + jsonObject.get("forecast15").getAsJsonArray().get(1).getAsJsonObject().get("high") + "℃";
+            String day = jsonObject.get("forecast15").getAsJsonArray().get(1).getAsJsonObject().get("day").getAsJsonObject().get("wthr").getAsString();
+            String night = jsonObject.get("forecast15").getAsJsonArray().get(1).getAsJsonObject().get("night").getAsJsonObject().get("wthr").getAsString();
+            if (day.equals(night)){
+                current_dayWeather = current_dayWeather + "\n" + day;
+            }else {
+                current_dayWeather = current_dayWeather + "\n" + day + "转" + night;
+            }
+
+
+            ////////明天天气
+            tomorrow_weather = "明天   " + jsonObject.get("forecast15").getAsJsonArray().get(2).getAsJsonObject().get("low") + "~"
+                    + jsonObject.get("forecast15").getAsJsonArray().get(2).getAsJsonObject().get("high") + "℃";
+            day = jsonObject.get("forecast15").getAsJsonArray().get(2).getAsJsonObject().get("day").getAsJsonObject().get("wthr").getAsString();
+            night = jsonObject.get("forecast15").getAsJsonArray().get(2).getAsJsonObject().get("night").getAsJsonObject().get("wthr").getAsString();
+            if (day.equals(night)){
+                tomorrow_weather = tomorrow_weather + "\n" + day;
+            }else {
+                tomorrow_weather = tomorrow_weather + "\n" +day + "转" + night;
+            }
+
+            /////////二十四小时天气
+            String current5HourTime;
+            list.clear();
+            for (int i = 0;i<8;i++){
+                current5HourTime = jsonObject.get("hourfc").getAsJsonArray().get(i).getAsJsonObject().get("time").getAsString().substring(8,10) + ":00";
+                list.add(new WeatherItem(current5HourTime,jsonObject.get("hourfc").getAsJsonArray().get(i).getAsJsonObject().get("wthr").getAsFloat()));
+            }
+
+
+            ///////未来几天天气
+            String date;
+            String sunrise;
+            String sunset;
+            String high;
+            String low;
+            String dayWTHR;//云
+            String dayWD;//风向
+            String dayWP;//风力
+            String nightWTHR;
+            String nightWD;
+            String nightWP;
+            String AQI;///空气质量
+            for(int i = 0;i<6;i++){
+                date = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("date").getAsString();
+                sunrise = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("sunrise").getAsString();
+                sunset = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("sunset").getAsString();
+                high = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("high").getAsString();
+                low = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("low").getAsString();
+                AQI = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("aqi").getAsString();
+                dayWTHR = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("day").getAsJsonObject().get("wthr").getAsString();
+                dayWD = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("day").getAsJsonObject().get("wd").getAsString();
+                dayWP = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("day").getAsJsonObject().get("wp").getAsString();
+                nightWTHR = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("night").getAsJsonObject().get("wthr").getAsString();
+                nightWD = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("night").getAsJsonObject().get("wd").getAsString();
+                nightWP = jsonObject.get("forecast15").getAsJsonArray().get(i).getAsJsonObject().get("night").getAsJsonObject().get("wp").getAsString();
+                //futureDay_weather[i] = date + "  " + AQI + "  " + dayWTHR + "  " + dayWD + "  " + high  + "      " + low + "  " +nightWTHR + "  " + nightWD;
+                int iaqi  =  Integer.parseInt(AQI);
+                String AQItype = "";
+                if(iaqi<=50)
+                    AQItype = "优质        ";
+                else if(iaqi>50&&iaqi<=100)
+                    AQItype = "良            ";
+                else if(100<iaqi&&iaqi<=200)
+                    AQItype = "轻度污染";
+                else if(200<iaqi&&iaqi<=300)
+                    AQItype = "中度污染";
+                else if(300<iaqi)
+                    AQItype = "重度污染";
+
+                futureDay_weather[i] = date.substring(4,6) + "-" + date.substring(6) + "         " + low + "~" + high +"℃" + "         " + AQItype;
+
+                if (dayWTHR.equals(nightWTHR)){
+                    futureDay_weather[i] = futureDay_weather[i] + "   " + dayWTHR;
+                }else {
+                    futureDay_weather[i] = futureDay_weather[i] + "   " +dayWTHR + "转" + nightWTHR;
+                }
+            }
+
+
+            ///////生活指数
+
+            for(int i = 0;i<13;i++){
+                JsonObject index = jsonObject.get("indexes").getAsJsonArray().get(i).getAsJsonObject();
+                life_guide[i] = "[" + index.get("name").getAsString() + "]" + "   :   " + index.get("valueV2").getAsString() + "\n\n" + index.get("desc").getAsString();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getJson(){
+
+        String url = "http://zhwnlapi.etouch.cn/Ecalender/api/v2/weather?date=20160120&city=" + cityName;
+        Request.Builder requestBuilder = new Request.Builder().url(url);
+        requestBuilder.method("GET", null);
+        Request request = requestBuilder.build();
+        Call mCall = client.newCall(request);
+        mCall.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+            }
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                updateLocalCache(response.body().string());
+            }
+        });
+    }
+
+//////////////////百度api
+private void startLocate() {
+    mLocationClient = new LocationClient(getApplicationContext());     //声明LocationClient类
+    mLocationClient.registerLocationListener(myListener);    //注册监听函数
+    LocationClientOption option = new LocationClientOption();
+    option.setLocationMode(LocationClientOption.LocationMode.Battery_Saving
+    );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+    option.setCoorType("bd09ll");//可选，默认gcj02，设置返回的定位结果坐标系
+    int span = 1000;
+    option.setScanSpan(span);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+    option.setIsNeedAddress(true);//可选，设置是否需要地址信息，默认不需要
+    option.setOpenGps(true);//可选，默认false,设置是否使用gps
+    option.setLocationNotify(true);//可选，默认false，设置是否当GPS有效时按照1S/1次频率输出GPS结果
+    option.setIsNeedLocationDescribe(true);//可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+    option.setIsNeedLocationPoiList(true);//可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+    option.setIgnoreKillProcess(false);//可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+    option.SetIgnoreCacheException(false);//可选，默认false，设置是否收集CRASH信息，默认收集
+    option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤GPS仿真结果，默认需要
+    mLocationClient.setLocOption(option);
+    //开启定位
+    mLocationClient.start();
+}
+
+
+    private class MyLocationListener implements BDLocationListener {
+        @Override
+        public void onReceiveLocation(BDLocation location) {
+
+            if(!ifpoi){
+                cityName = location.getCity();
+                getJson();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                ///当前天气状况
+                tvWeather.setText(results);
+                tvcurrentposiition.setText(current_posiition);
+                tvcurrentcloud.setText("  " + current_cloud + "  ");
+                ///当天天气状况
+                tvcurrentDayWeather.setText(current_dayWeather);
+                ///明天天气状况
+                tvtomorrowWeather.setText(tomorrow_weather);
+                ////五小时天气预报
+//                for(int i = 0;i<24;i++){
+//                    tv_lateWweather[i].setTextColor(Color.rgb(0,0,0));
+//                    tv_lateWweather[i].setText(late_weather[i]);
+//                }
+
+                /////几天天气预报
+                for(int i = 0;i<6;i++){
+                    tv_futureDayWeather[i].setTextColor(Color.rgb(0,0,0));
+                    tv_futureDayWeather[i].setText(futureDay_weather[i]);
+                }
+                ////////生活指数
+                for(int i = 0;i<13;i++){
+                   // tv_lifeGuide[i].setTextColor(Color.rgb(0,0,0));
+                    tv_lifeGuide[i].setText(life_guide[i]);
+                }
+
+
+                chart1.SetTuView(list,"");//单位: 摄氏度
+                chart1.invalidate();
+                ifpoi = true;
+            }
+
+        }
+    }
+
+}
+
+

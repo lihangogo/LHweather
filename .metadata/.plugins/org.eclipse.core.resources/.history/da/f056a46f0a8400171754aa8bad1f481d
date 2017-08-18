@@ -1,0 +1,15 @@
+package com.lihangogo.lhweather.ObserverPattern;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventSubject implements EventObserverInterface {
+
+	private List<EventObserver> myEventObservers=new ArrayList<>();
+	
+	@Override
+	public void dispatchChange(String eventType) {
+
+	}
+
+}

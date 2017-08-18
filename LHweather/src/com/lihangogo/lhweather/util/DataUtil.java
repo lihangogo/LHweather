@@ -13,6 +13,7 @@ import com.example.lhweather.R;
 
 public class DataUtil {
 	private DataUtil(){
+		
 	}
 	/**
 	 * 获取天气信息
@@ -39,14 +40,12 @@ public class DataUtil {
 			while((line=reader.readLine())!=null){
 				response.append(line).append("\r\n");		
 			}	
-			reader.close();	
-			//Log.e("bb",response.toString());
+			reader.close();				
 		} catch (Exception e) {
 			Log.e("11","11");
 		}
 		return response.toString();
 	}
-	
 	
 	public static String getCity(){
 		return null;

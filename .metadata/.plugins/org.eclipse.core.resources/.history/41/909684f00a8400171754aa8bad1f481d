@@ -1,0 +1,44 @@
+package com.lihangogo.lhweather.ObserverPattern;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventSubject implements EventSubjectInterface {
+
+	private List<EventObserver> myEventObservers=
+			new ArrayList<EventObserver>();
+	private static volatile EventSubject myEventSubject;
+    private EventSubject(){
+
+    } 
+	
+    public synchronized static EventSubject getInstance(){
+        if(myEventSubject ==null){
+            myEventSubject =new EventSubject();
+        }
+        return myEventSubject;
+    }
+    
+	@Override
+	public void registerObserver(EventObserverInterface observer) {
+		synchronized (myEventObservers){
+            if(observer!=null){
+                if(mEventObservers.contains(observer)){
+                    return;
+                }
+                mEventObservers.add(observer);
+            }
+        }
+	}
+	@Override
+	public void removeObserver(EventObserverInterface observer) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void notifyObserver(String eventType) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

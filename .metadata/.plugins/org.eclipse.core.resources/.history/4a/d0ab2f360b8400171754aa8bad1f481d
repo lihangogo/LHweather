@@ -1,0 +1,11 @@
+package com.lihangogo.lhweather.ObserverPattern;
+
+public class EventObserver implements EventObserverInterface {
+
+	@Override
+	public void dispatchChange(String eventType) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

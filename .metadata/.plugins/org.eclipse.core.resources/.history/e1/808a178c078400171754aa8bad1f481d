@@ -1,0 +1,5 @@
+package com.lihangogo.lhweather.inter;
+
+public interface SubjectInterface {
+
+}

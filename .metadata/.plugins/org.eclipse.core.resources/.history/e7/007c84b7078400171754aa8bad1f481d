@@ -1,0 +1,11 @@
+package com.lihangogo.lhweather.inter;
+
+public interface EventSubjectInterface {
+	/**
+	 * 注册观察者
+	 * @param observer
+	 */
+	public void registerObserver(EventObserver observer);
+	public void removeObserver(EventObserver observer);
+	public void notifyObserver(String eventType);
+}
