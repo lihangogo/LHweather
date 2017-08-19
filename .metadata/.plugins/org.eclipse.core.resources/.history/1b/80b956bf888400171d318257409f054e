@@ -1,0 +1,14 @@
+package com.lihangogo.lhweather.activity;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class ChooseCityActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+	}
+	
+}

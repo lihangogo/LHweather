@@ -25,3 +25,5 @@
 1503055360882	Rename compilation unit 'SubjectInterface.java'
 1503055818796	Rename type 'EventObserver'
 1503056392544	Rename package 'com.lihangogo.lhweather.inter'
+1503102830608	Rename type 'CityUtil'
+1503106725985	Rename type 'WeatherDBHelper'

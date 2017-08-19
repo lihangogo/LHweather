@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="13" version="2.0">
+<workbench progressCount="21" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="1024" x="660" y="15">
+<window height="728" maximized="true" width="859" x="44" y="19">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="250"/>
@@ -24,8 +24,9 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -37,54 +38,47 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="weather.xml" partName="weather.xml" path="C:/Users/admin/Documents/GitHub/LHweather/LHweather/res/layout/weather.xml" title="weather.xml" tooltip="LHweather/res/layout/weather.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LHweather/res/layout/weather.xml"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="theActivity.java" partName="theActivity.java" path="C:/Users/admin/Documents/GitHub/LHweather/LHweather/src/com/lihangogo/lhweather/activity/theActivity.java" title="theActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/activity/theActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LHweather/src/com/lihangogo/lhweather/activity/theActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="194" selectionTopPixel="67"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="C:/Users/admin/Documents/GitHub/LHweather/LHweather/src/com/lihangogo/lhweather/activity/MainActivity.java" title="MainActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/activity/MainActivity.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LHweather/src/com/lihangogo/lhweather/activity/MainActivity.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1841" selectionTopPixel="1333"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JsonAnalysisTask.java" partName="JsonAnalysisTask.java" path="C:/Users/admin/Documents/GitHub/LHweather/LHweather/src/com/lihangogo/lhweather/util/JsonAnalysisTask.java" title="JsonAnalysisTask.java" tooltip="LHweather/src/com/lihangogo/lhweather/util/JsonAnalysisTask.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LHweather/src/com/lihangogo/lhweather/util/JsonAnalysisTask.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1731" selectionTopPixel="1002"/>
-</editor>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" partName="activity_main.xml" path="C:/Users/admin/Documents/GitHub/LHweather/LHweather/res/layout/activity_main.xml" title="activity_main.xml" tooltip="LHweather/res/layout/activity_main.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LHweather/res/layout/activity_main.xml"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CityAnalysisTask.java" partName="CityAnalysisTask.java" path="C:/Users/admin/Documents/GitHub/LHweather/LHweather/src/com/lihangogo/lhweather/util/CityAnalysisTask.java" title="CityAnalysisTask.java" tooltip="LHweather/src/com/lihangogo/lhweather/util/CityAnalysisTask.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LHweather/src/com/lihangogo/lhweather/util/CityAnalysisTask.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="239" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
-<view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices"/>
+<view id="org.eclipse.team.ui.GenericHistoryView" partName="History">
+<viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.DeviceView" partName="Devices">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.callhierarchy.view" partName="Call Hierarchy">
 <viewState search_scope_type="1"/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.ThreadView" partName="Threads"/>
+<view id="com.android.ide.eclipse.ddms.views.ThreadView" partName="Threads">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.HeapView" partName="Heap"/>
+<view id="com.android.ide.eclipse.ddms.views.HeapView" partName="Heap">
+<viewState/>
+</view>
 <view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
 <viewState/>
 </view>
 <view id="com.android.ide.eclipse.ddms.views.FileExplorerView" partName="File Explorer">
 <viewState/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.NetworkStatsView" partName="Network Statistics"/>
+<view id="com.android.ide.eclipse.ddms.views.NetworkStatsView" partName="Network Statistics">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
+<category IMemento.internal.id="Warnings (5 items)"/>
 <category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
@@ -126,17 +120,23 @@
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.SysInfoView" partName="System Information"/>
-<view id="com.android.ide.eclipse.ddms.views.EmulatorControlView" partName="Emulator Control"/>
+<view id="com.android.ide.eclipse.ddms.views.SysInfoView" partName="System Information">
+<viewState/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.EmulatorControlView" partName="Emulator Control">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
 <viewState/>
 </view>
-<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker"/>
+<view id="com.android.ide.eclipse.ddms.views.AllocTrackerView" partName="Allocation Tracker">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="0" fixed="0" version="0.016">
 <descriptor class="com.android.ide.eclipse.ddms.Perspective" id="com.android.ide.eclipse.ddms.Perspective" label="DDMS"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -178,21 +178,36 @@
 <view id="com.android.ide.eclipse.ddms.views.EmulatorControlView"/>
 <view id="com.android.ide.eclipse.ddms.views.SysInfoView"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="devices">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.DeviceView:*" label="LabelNotFound"/>
+<layout>
+<mainWindow>
+<info folder="true" part="devices">
+<folder activePageID="com.android.ide.eclipse.ddms.views.DeviceView" appearance="2" expanded="2">
 <page content="com.android.ide.eclipse.ddms.views.DeviceView" label="Devices"/>
+<page content="com.android.ide.eclipse.ddms.views.DeviceView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="devices">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="devices">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="logcat" ratio="0.7990115" ratioLeft="485" ratioRight="122" relationship="4" relative="devices">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView:*" label="LabelNotFound"/>
+<info folder="true" part="logcat" ratio="0.7990115" ratioLeft="485" ratioRight="122" relationship="4" relative="devices">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.3" ratioLeft="300" ratioRight="700" relationship="2" relative="devices"/>
-<info folder="true" part="ddms-detail" ratio="0.5" ratioLeft="350" ratioRight="350" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="com.android.ide.eclipse.ddms.views.ThreadView:*" label="LabelNotFound"/>
+<info folder="true" part="ddms-detail" ratio="0.5" ratioLeft="350" ratioRight="350" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.android.ide.eclipse.ddms.views.ThreadView" appearance="2" expanded="2">
 <page content="com.android.ide.eclipse.ddms.views.ThreadView" label="Threads"/>
 <page content="com.android.ide.eclipse.ddms.views.HeapView" label="Heap"/>
 <page content="com.android.ide.eclipse.ddms.views.AllocTrackerView" label="Allocation Tracker"/>
@@ -200,12 +215,22 @@
 <page content="com.android.ide.eclipse.ddms.views.FileExplorerView" label="File Explorer"/>
 <page content="com.android.ide.eclipse.ddms.views.EmulatorControlView" label="Emulator Control"/>
 <page content="com.android.ide.eclipse.ddms.views.SysInfoView" label="System Information"/>
+<page content="com.android.ide.eclipse.ddms.views.ThreadView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</presentation>
 </folder>
 </info>
 </mainWindow>
 </layout>
 </perspective>
-<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
@@ -241,6 +266,7 @@
 <show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
 <show_view_action id="org.eclipse.pde.runtime.LogView"/>
 <show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_in_time id="org.eclipse.team.ui.GenericHistoryView" time="1503105693532"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
 <new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
@@ -264,27 +290,39 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.ui.views.ProblemView"/>
-<view id="org.eclipse.jdt.ui.JavadocView"/>
-<view id="org.eclipse.jdt.ui.SourceView"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.eclipse.jdt.callhierarchy.view"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="bottom" orientation="256" selectedTabId="org.eclipse.team.ui.GenericHistoryView" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" ratio="0.3"/>
+<view id="org.eclipse.team.ui.GenericHistoryView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="16384" id="left" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
+<fastViews>
+<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="right" orientation="512" selectedTabId="org.eclipse.jdt.callhierarchy.view" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+<view id="org.eclipse.jdt.callhierarchy.view" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@16850204" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
@@ -297,35 +335,27 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25313655" ratioLeft="343" ratioRight="1012" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.48949918" ratioLeft="303" ratioRight="316" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
-<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
-<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
 <page content="com.android.ide.eclipse.ddms.views.FileExplorerView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-</presentation>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.jdt.callhierarchy.view" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<page content="org.eclipse.jdt.callhierarchy.view" label="Call Hierarchy"/>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.callhierarchy.view" label="LabelNotFound"/>
 <page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.egit.ui.RepositoriesView" ratio="0.5996705" ratioLeft="364" ratioRight="243" relationship="4" relative="left"/>
@@ -338,137 +368,160 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/activity/MainActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/util/JsonAnalysisTask.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/ObserverPattern/BaseObserverActivity.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/activity/theActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/util/CityAnalysisTask.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/util/DataUtil.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/util/CityInforDBHelper.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/activity/ChooseCityActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LHweather/src/com/lihangogo/lhweather/activity/WeatherActivity.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LHweather/res/layout/weather.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/LHweather/res/layout/activity_main.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" path="/LHweather/AndroidManifest.xml"/>
 </editors>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="194" y="0"/>
-</item>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1140" y="0"/>
-</item>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="194" y="0"/>
-</item>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="JsonAnalysisTask.java" index="1">
-<position info="not_deleted" x="999" y="0"/>
-</item>
-<item historyLabel="JsonAnalysisTask.java" index="1">
-<position info="not_deleted" x="1270" y="0"/>
-</item>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="194" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1140" y="0"/>
-</item>
-<item historyLabel="BaseObserverActivity.java" index="2">
-<position info="not_deleted" x="146" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1140" y="0"/>
-</item>
-<item historyLabel="JsonAnalysisTask.java" index="1">
-<position info="not_deleted" x="1551" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1947" y="0"/>
-</item>
-<item historyLabel="JsonAnalysisTask.java" index="1">
-<position info="not_deleted" x="1383" y="562"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1947" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1906" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1641" y="0"/>
-</item>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="194" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1641" y="0"/>
-</item>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="activity_main.xml" index="5"/>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1641" y="0"/>
-</item>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1641" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1923" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1927" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1627" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1632" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1456" y="0"/>
-</item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1646" y="0"/>
-</item>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="329" y="0"/>
-</item>
-<item historyLabel="LHweather Manifest" index="6"/>
-<item historyLabel="theActivity.java" index="3">
-<position info="not_deleted" x="194" y="0"/>
-</item>
-<item historyLabel="weather.xml" index="4"/>
-<item historyLabel="MainActivity.java" index="0">
+<item historyLabel="CityInforDBHelper.java" index="4">
 <position/>
 </item>
-<item historyLabel="activity_main.xml" index="5"/>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="993" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1735" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1724" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1077" y="8"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1724" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1320" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1328" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1331" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1309" y="3"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1331" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="880" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="898" y="0"/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="217" y="0"/>
+</item>
 <item historyLabel="JsonAnalysisTask.java" index="1">
-<position info="not_deleted" x="1731" y="0"/>
+<position/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="WeatherActivity.java" index="6">
+<position info="not_deleted" x="563" y="0"/>
+</item>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1027" y="0"/>
+</item>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="JsonAnalysisTask.java" index="1">
+<position/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="DataUtil.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="JsonAnalysisTask.java" index="1">
+<position/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
 </item>
 <item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1464" y="0"/>
+<position info="not_deleted" x="1982" y="0"/>
 </item>
-<item historyLabel="activity_main.xml" index="5"/>
+<item historyLabel="WeatherActivity.java" index="6">
+<position info="not_deleted" x="563" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1027" y="4"/>
+</item>
+<item historyLabel="WeatherActivity.java" index="6">
+<position info="not_deleted" x="528" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="997" y="0"/>
+</item>
+<item historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="997" y="0"/>
+</item>
 <item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1464" y="0"/>
+<position info="not_deleted" x="1982" y="0"/>
 </item>
-<item historyLabel="activity_main.xml" index="5"/>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1464" y="0"/>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1027" y="0"/>
 </item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1635" y="0"/>
+<item historyLabel="JsonAnalysisTask.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1330" y="2"/>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1027" y="0"/>
 </item>
-<item active="true" historyLabel="MainActivity.java" index="0">
-<position info="not_deleted" x="1371" y="0"/>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position info="not_deleted" x="1276" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1027" y="0"/>
+</item>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position info="not_deleted" x="1276" y="0"/>
+</item>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position info="not_deleted" x="1419" y="0"/>
+</item>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position info="not_deleted" x="617" y="0"/>
+</item>
+<item historyLabel="weather.xml" index="7"/>
+<item historyLabel="CityInforDBHelper.java" index="4">
+<position info="not_deleted" x="1417" y="0"/>
+</item>
+<item historyLabel="ChooseCityActivity.java" index="5">
+<position info="not_deleted" x="1027" y="0"/>
+</item>
+<item active="true" historyLabel="CityAnalysisTask.java" index="2">
+<position info="not_deleted" x="239" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -482,7 +535,6 @@
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="bottom"/>
 <trimItem IMemento.internal.id="right"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -496,38 +548,14 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="LHweather/AndroidManifest.xml">
-<persistable path="/LHweather/AndroidManifest.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="weather.xml" tooltip="LHweather/res/layout/weather.xml">
+<persistable path="/LHweather/res/layout/weather.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="activity_main.xml" tooltip="LHweather/res/layout/activity_main.xml">
-<persistable path="/LHweather/res/layout/activity_main.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseObserverActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/ObserverPattern/BaseObserverActivity.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/ObserverPattern/BaseObserverActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CityInforDBHelper.java" tooltip="LHweather/src/com/lihangogo/lhweather/util/CityInforDBHelper.java">
+<persistable path="/LHweather/src/com/lihangogo/lhweather/util/CityInforDBHelper.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="JsonAnalysisTask.java" tooltip="LHweather/src/com/lihangogo/lhweather/util/JsonAnalysisTask.java">
 <persistable path="/LHweather/src/com/lihangogo/lhweather/util/JsonAnalysisTask.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Notify.java" tooltip="LHweather/src/com/lihangogo/lhweather/ObserverPattern/Notify.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/ObserverPattern/Notify.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EventType.java" tooltip="LHweather/src/com/lihangogo/lhweather/ObserverPattern/EventType.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/ObserverPattern/EventType.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EventObserver.java" tooltip="LHweather/src/com/lihangogo/lhweather/ObserverPattern/EventObserver.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/ObserverPattern/EventObserver.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EventSubject.java" tooltip="LHweather/src/com/lihangogo/lhweather/ObserverPattern/EventSubject.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/ObserverPattern/EventSubject.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EventSubjectInterface.java" tooltip="LHweather/src/com/lihangogo/lhweather/inter/EventSubjectInterface.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/inter/EventSubjectInterface.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EventObserver.java" tooltip="LHweather/src/com/lihangogo/lhweather/inter/EventObserver.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/inter/EventObserver.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubjectInterface.java" tooltip="LHweather/src/com/lihangogo/lhweather/inter/SubjectInterface.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/inter/SubjectInterface.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/activity/MainActivity.java">
 <persistable path="/LHweather/src/com/lihangogo/lhweather/activity/MainActivity.java"/>
@@ -535,11 +563,35 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataUtil.java" tooltip="LHweather/src/com/lihangogo/lhweather/util/DataUtil.java">
 <persistable path="/LHweather/src/com/lihangogo/lhweather/util/DataUtil.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="theActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/activity/theActivity.java">
-<persistable path="/LHweather/src/com/lihangogo/lhweather/activity/theActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WeatherActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/activity/WeatherActivity.java">
+<persistable path="/LHweather/src/com/lihangogo/lhweather/activity/WeatherActivity.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="weather.xml" tooltip="LHweather/res/layout/weather.xml">
-<persistable path="/LHweather/res/layout/weather.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="LHweather/AndroidManifest.xml">
+<persistable path="/LHweather/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChooseCityActivity.java" tooltip="LHweather/src/com/lihangogo/lhweather/activity/ChooseCityActivity.java">
+<persistable path="/LHweather/src/com/lihangogo/lhweather/activity/ChooseCityActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SunRSTime.java" tooltip="LHweather/src/com/lihangogo/lhweather/entity/daily_forecast/SunRSTime.java">
+<persistable path="/LHweather/src/com/lihangogo/lhweather/entity/daily_forecast/SunRSTime.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WeatherDBHelper.java" tooltip="LHweather/src/com/lihangogo/lhweather/util/WeatherDBHelper.java">
+<persistable path="/LHweather/src/com/lihangogo/lhweather/util/WeatherDBHelper.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CityData.java" tooltip="CityList/src/com/liucanwen/citylist/data/CityData.java">
+<persistable path="/CityList/src/com/liucanwen/citylist/data/CityData.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="jarlist.cache" tooltip="CityList/bin/jarlist.cache">
+<persistable path="/CityList/bin/jarlist.cache"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="citylist.jar" tooltip="CityList/bin/citylist.jar">
+<persistable path="/CityList/bin/citylist.jar"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HanziToPinyin3.java" tooltip="CityList/src/com/liucanwen/citylist/widget/pinyin/HanziToPinyin3.java">
+<persistable path="/CityList/src/com/liucanwen/citylist/widget/pinyin/HanziToPinyin3.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PinYin.java" tooltip="CityList/src/com/liucanwen/citylist/widget/pinyin/PinYin.java">
+<persistable path="/CityList/src/com/liucanwen/citylist/widget/pinyin/PinYin.java"/>
 </file>
 </mruList>
 </workbench>

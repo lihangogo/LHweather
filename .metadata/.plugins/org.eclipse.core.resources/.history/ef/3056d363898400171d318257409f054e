@@ -1,0 +1,19 @@
+package com.lihangogo.lhweather.activity;
+
+import com.lihangogo.lhweather.util.CityInforDBHelper;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class ChooseCityActivity extends Activity {
+	private CityInforDBHelper helper=null;
+	private final int DB_COPY_COMPLETE=1;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+	}
+	
+}

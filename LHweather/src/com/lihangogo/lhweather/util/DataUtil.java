@@ -42,7 +42,7 @@ public class DataUtil {
 			}	
 			reader.close();				
 		} catch (Exception e) {
-			Log.e("11","11");
+			Log.e("Exception","get weather error");
 		}
 		return response.toString();
 	}

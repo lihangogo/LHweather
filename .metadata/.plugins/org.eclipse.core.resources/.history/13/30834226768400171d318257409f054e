@@ -1,0 +1,7 @@
+package com.lihangogo.lhweather.util;
+
+import android.os.AsyncTask;
+
+public class CityAnalysisTask extends AsyncTask<Params, Progress, Result>{
+
+}

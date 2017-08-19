@@ -1,7 +1,5 @@
 package com.lihangogo.lhweather.activity;
 
-import java.io.Serializable;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,7 +32,7 @@ public class MainActivity extends BaseObserverActivity {
 		if(EventType.UPDATE_MAIN.equals(eventType)){
 			weather=task.getWeather();
 			Log.e("aa",weather.toString());
-			opt();
+			operation();
 		}
 	}
 
@@ -45,11 +43,10 @@ public class MainActivity extends BaseObserverActivity {
 		};
 	}
 	
-	private void opt(){
+	private void operation(){
 		View view=findViewById(R.id.centerImg);
 		AlphaAnimation aa=new AlphaAnimation(1, 0);
 		aa.setDuration(2000);
-		//Log.e("a3","a3");
 		view.startAnimation(aa);
 		aa.setAnimationListener(new AnimationListener() {	
 			@Override

@@ -26,6 +26,10 @@
             android:name="com.lihangogo.lhweather.activity.WeatherActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.lihangogo.lhweather.activity.ChooseCityActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 	<uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
