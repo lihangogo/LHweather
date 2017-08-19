@@ -1,0 +1,52 @@
+package com.lihangogo.lhweather.util;
+
+import android.content.Context;
+import android.os.AsyncTask;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.lihangogo.lhweather.ObserverPattern.EventType;
+import com.lihangogo.lhweather.ObserverPattern.Notify;
+import com.lihangogo.lhweather.entity.QueryResultForWeatherFirst;
+
+public class JsonAnalysisTask extends AsyncTask<Integer, Double, String> {
+	private Context context;
+	private QueryResultForWeatherFirst weather;
+	
+	public JsonAnalysisTask(Context context){
+		this.context=context;
+	}
+	@Override
+	protected String doInBackground(Integer... arg0) {
+		String str=DataUtil.getWeather(context,"北京","zh");
+		return str;
+	}
+
+	@Override
+	protected void onPostExecute(String result) {
+		super.onPostExecute(result);
+		Gson gson=new GsonBuilder().create();			
+		weather=gson.fromJson(result,QueryResultForWeatherFirst.class);
+		//Log.e("weather",""+weather);
+		operation();
+	}
+
+	public QueryResultForWeatherFirst getWeather(){
+		return weather;
+	}
+	
+	@Override
+	protected void onPreExecute() {
+		super.onPreExecute();
+	}
+
+	@Override
+	protected void onProgressUpdate(Double... values) {
+		super.onProgressUpdate(values);
+	}
+	
+	private void operation(){
+		Notify.getInstance().NotifyActivity(EventType.UPDATE_MAIN);
+	}
+
+}

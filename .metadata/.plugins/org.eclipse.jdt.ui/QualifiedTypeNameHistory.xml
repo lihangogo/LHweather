@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.view.animation.AlphaAnimation"/>
-<fullyQualifiedTypeName name="com.example.lhweather.R.layout"/>
 <fullyQualifiedTypeName name="android.view.animation.Animation.AnimationListener"/>
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.util.JsonAnalysisTask"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
@@ -34,11 +33,17 @@
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.MainActivity"/>
 <fullyQualifiedTypeName name="com.example.lhweather.R.id"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
-<fullyQualifiedTypeName name="com.lihangogo.lhweather.util.CityInforDBHelper"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="android.os.Handler.Callback"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
-<fullyQualifiedTypeName name="com.example.lhweather.R"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.database.sqlite.SQLiteDatabase"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.entity.basic.CityBasicInfo"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.util.CityInforDBHelper"/>
+<fullyQualifiedTypeName name="com.example.lhweather.R"/>
+<fullyQualifiedTypeName name="com.example.lhweather.R.layout"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.WeatherActivity"/>
+<fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.ChooseCityActivity"/>
 </qualifiedTypeNameHistroy>
