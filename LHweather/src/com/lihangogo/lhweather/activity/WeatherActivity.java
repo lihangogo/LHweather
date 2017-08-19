@@ -16,6 +16,5 @@ public class WeatherActivity extends Activity {
 		
 		weather=(QueryResultForWeatherFirst) getIntent().getSerializableExtra("weather");
 		//Log.e("bb",""+weather);
-	}
-	
+	}	
 }

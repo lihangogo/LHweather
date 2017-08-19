@@ -8,7 +8,7 @@ public class CityInforDBHelper extends SQLiteOpenHelper {
 	/**
 	 * 文件名
 	 */
-	public static final String DB_WEATHER_FILENAME = "t_city";
+	public static final String DB_WEATHER_FILENAME = "t_city.db";
 	
 	/**
 	 * 数据库名称

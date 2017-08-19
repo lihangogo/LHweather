@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,8 +33,9 @@ public class ChooseCityActivity extends Activity {
 
 	private void copyCityToDB() {
 		File dbFile = getDatabasePath(CityInforDBHelper.DB_WEATHER_NAME);
+		Log.e("dbFilePath",""+dbFile);
 		if (dbFile.exists()) {
-			//Log.e("dbfile", "aa");
+			Log.e("dbfile", "aa1");
 			boolean b = dbFile.delete();
 			Log.e("bb", "" + b);
 			handler.sendEmptyMessage(DB_EXISTS);
@@ -70,20 +72,20 @@ public class ChooseCityActivity extends Activity {
 				String strLine = reader.readLine();
 				if (TextUtils.isEmpty(strLine)) {
 					break;
-				}
-				String[] cityInfos = strLine.trim().split(",");
-				Log.e("num",""+cityInfos.length);
+				}			
+				String[] cityInfos = strLine.trim().split("\t");				
 				if (cityInfos != null && cityInfos.length > 0) {
-					String id = cityInfos[0];
-					String spell_zh = cityInfos[1];
-					String area = cityInfos[2];
-					String town = cityInfos[3];
-					String province = cityInfos[4];
+					String id = cityInfos[2];
+					String spell_zh = cityInfos[3];
+					String area = cityInfos[4];
+					String town = cityInfos[5];
+					String province = cityInfos[6];
 					values.put(DB_WEATHER_CITY_ID, id);
 					values.put(DB_WEATHER_CITY_SPELL_ZH, spell_zh);
 					values.put(DB_WEATHER_CITY_CITY_AREA, area);
 					values.put(DB_WEATHER_CITY_CITY_TOWN, town);
 					values.put(DB_WEATHER_CITY_CITY_PROVINCE, province);
+					Log.e("num",""+values.toString());
 					sqliteDatabase.insert(tableName, null, values);
 				}
 			}
@@ -106,6 +108,12 @@ public class ChooseCityActivity extends Activity {
 			}
 		}
 		handler.sendEmptyMessage(DB_COPY_COMPLETE);
+		SQLiteDatabase dd=helper.getReadableDatabase();
+		Cursor c=dd.rawQuery("select * from t_city",null);
+		while(c.moveToNext()){
+			String ss=c.getString(c.getColumnIndex("city_area"));
+			Log.e("ss",ss);
+		}
 	}
 
 	private Handler handler = new Handler(new Callback() {
