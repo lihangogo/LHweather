@@ -13,6 +13,7 @@
         android:layout_weight="5"
         android:contentDescription="@string/image_error"
         android:background="@drawable/center"
+        
         android:scaleType="fitCenter" />
 	    
 </LinearLayout>

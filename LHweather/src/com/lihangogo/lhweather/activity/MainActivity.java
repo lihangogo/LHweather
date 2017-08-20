@@ -23,8 +23,8 @@ public class MainActivity extends BaseObserverActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		task=new JsonAnalysisTask(this);
-		task.execute();
+		task=new JsonAnalysisTask(this);	
+		task.execute("shenyang","zh");
 	}
 	
 	@Override

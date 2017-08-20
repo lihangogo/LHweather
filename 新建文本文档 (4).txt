@@ -70,3 +70,13 @@
 
 
 30977458+lihangogo@users.noreply.github.com
+
+SharedPreferences sharedPreferences = getSharedPreferences("ljq", Context.MODE_PRIVATE);
+
+Editor editor = sharedPreferences.edit();//获取编辑器
+
+editor.putString("name", "林计钦");
+
+editor.putInt("age", 24);
+
+editor.commit();//提交修改

@@ -9,7 +9,7 @@ import com.lihangogo.lhweather.ObserverPattern.EventType;
 import com.lihangogo.lhweather.ObserverPattern.Notify;
 import com.lihangogo.lhweather.entity.QueryResultForWeatherFirst;
 
-public class JsonAnalysisTask extends AsyncTask<Integer, Double, String> {
+public class JsonAnalysisTask extends AsyncTask<String, Double, String> {
 	private Context context;
 	private QueryResultForWeatherFirst weather;
 	
@@ -17,8 +17,8 @@ public class JsonAnalysisTask extends AsyncTask<Integer, Double, String> {
 		this.context=context;
 	}
 	@Override
-	protected String doInBackground(Integer... arg0) {
-		String str=DataUtil.getWeather(context,"beijing","zh");
+	protected String doInBackground(String... arg0) {
+		String str=DataUtil.getWeather(context,arg0[0],arg0[1]);
 		return str;
 	}
 

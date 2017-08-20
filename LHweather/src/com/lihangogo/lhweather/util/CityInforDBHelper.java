@@ -45,7 +45,19 @@ public class CityInforDBHelper extends SQLiteOpenHelper {
 			+ " text," + DB_WEATHER_CITY_SPELL_ZH + " text,"
 			+ DB_WEATHER_CITY_CITY_AREA + " text," + DB_WEATHER_CITY_CITY_TOWN
 			+ " text," + DB_WEATHER_CITY_CITY_PROVINCE + " text)";
+	
+	private final String CREATE_INDEX_ON_TCITY="create index index_city on "
+			+ DB_WEATHER_CITY_ID_TABLE_NAME
+			+ "("+DB_WEATHER_CITY_ID+")";
 
+	private final String CREATE_INDEX1_ON_CITY="create index index_area on " 
+			+ DB_WEATHER_CITY_ID_TABLE_NAME
+			+ "("+DB_WEATHER_CITY_CITY_AREA+")";
+	
+	private final String CREATE_INDEX2_ON_CITY="create index index_town on " 
+			+ DB_WEATHER_CITY_ID_TABLE_NAME
+			+ "("+DB_WEATHER_CITY_CITY_TOWN+")";
+	
 	/**
 	 * 创建subscribe表的sql语句
 	 */
@@ -63,6 +75,10 @@ public class CityInforDBHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase arg0) {
 		arg0.execSQL(CREATE_CITY_ID_TABLE);
+		arg0.execSQL(CREATE_INDEX_ON_TCITY);
+		arg0.execSQL(CREATE_INDEX1_ON_CITY);
+		arg0.execSQL(CREATE_INDEX2_ON_CITY);
+		
 		arg0.execSQL(CREATE_SUBSCRIBE_ID_TABLE);
 	}
 
