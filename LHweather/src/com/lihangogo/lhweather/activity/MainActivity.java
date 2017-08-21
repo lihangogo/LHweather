@@ -14,6 +14,10 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.example.lhweather.R;
 import com.lihangogo.lhweather.ObserverPattern.BaseObserverActivity;
 import com.lihangogo.lhweather.ObserverPattern.EventType;
@@ -26,15 +30,60 @@ public class MainActivity extends BaseObserverActivity {
 	private String choosedCity = "CN101121003";
 	private String spell = "zh";
 
+	private LocationClient client=null;
+	private BDLocationListener myListener=null;
+	private String myCity="";
+	private String myProvince="";
+	private String myArea="";
+	private String myCurrentLocation="";
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		// theClear();
+		 //theClear();
 
-		theInit();
+		//theInit();
+		getLocation();
 	}
 
+	private void getLocation(){
+		try{
+		client=new LocationClient(getApplicationContext());
+		initLocation();
+		myListener=new MyLocationListener();
+		client.registerLocationListener(myListener);
+		
+		client.start();
+		client.requestLocation();
+		}catch(Exception e){
+			Log.e("aabb",""+e);
+		}
+	}
+	
+	private void initLocation(){
+		LocationClientOption option = new LocationClientOption();
+        option.setIsNeedAddress(true);
+        option.setOpenGps(true);
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy
+        );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+        option.setCoorType("gcj02");//可选，默认gcj02，设置返回的定位结果坐标系
+        //option.setScanSpan(span);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+        client.setLocOption(option);
+	}
+	
+	 public class MyLocationListener implements BDLocationListener {
+
+	        @Override
+	        public void onReceiveLocation(BDLocation location) {	            
+	        	myCity = location.getCity(); 
+	        	myProvince = location.getProvince();
+	        	myArea = location.getDistrict();	
+	        	Log.e("city",myCity+" "+myProvince+" "+myArea);
+	        }
+	    }
+	
 	/**
 	 * 初始化
 	 */
@@ -43,11 +92,9 @@ public class MainActivity extends BaseObserverActivity {
 				Context.MODE_PRIVATE);
 		int config = sharedPreferences.getInt("useNet", 2);
 		Log.e("config", "1" + config);
-		if (config == 2 || config == 0) {
-			// 弹窗给选择
+		if (config == 2 || config == 0) {			
 			judgeUseNet();
-		} else if (config == 1) {
-			// 可以继续执行正常代码
+		} else if (config == 1) {			
 			task = new JsonAnalysisTask(this);
 			task.execute(choosedCity, spell);
 		}
@@ -119,49 +166,24 @@ public class MainActivity extends BaseObserverActivity {
 											public void onClick(
 													DialogInterface dialog,
 													int which) {
-												writeIntoShared("useSDCard", 1);
-												Toast.makeText(
-														getApplicationContext(),
-														"设置成功",
-														Toast.LENGTH_SHORT)
-														.show();
-												try {
-													Thread.sleep(1000);
-												} catch (Exception e) {
-													Log.e("Exception1",
-															"whywhy1");
-												}
-												task = new JsonAnalysisTask(
-														MainActivity.this);
-												task.execute(choosedCity, spell);
+												writeIntoShared("useSDCard", 1);	
+												useLocationOrNot();
 											}
 										})
-								.setNegativeButton("拒绝",
+								.setNegativeButton("不允许",
 										new DialogInterface.OnClickListener() {
 											public void onClick(
 													DialogInterface dialog,
 													int which) {
 												writeIntoShared("useSDCard", 0);
-												Toast.makeText(
-														getApplicationContext(),
-														"您可能会后悔的。。。",
-														Toast.LENGTH_SHORT)
-														.show();
-												try {
-													Thread.sleep(1000);
-												} catch (Exception e) {
-													Log.e("Exception2",
-															"whywhy2");
-												}
-												task = new JsonAnalysisTask(
-														MainActivity.this);
-												task.execute(choosedCity, spell);
+												useLocationOrNot();
 											}
 										}).show();
+						
 
 					}
 				})
-				.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+				.setNegativeButton("不允许", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						writeIntoShared("useNet", 0);
 						Toast.makeText(getApplicationContext(), "您会后悔的。。。",
@@ -178,6 +200,49 @@ public class MainActivity extends BaseObserverActivity {
 				}).show();
 	}
 
+	/**
+	 * 是否允许使用定位功能
+	 */
+	private void useLocationOrNot(){
+		new AlertDialog.Builder(MainActivity.this)
+		.setTitle("应用设置")
+		.setMessage("亲~ 是否允许本应用使用您的位置信息？")
+		.setPositiveButton("允许",
+				new DialogInterface.OnClickListener() {
+					public void onClick(
+							DialogInterface dialog,
+							int which) {
+						writeIntoShared("useLocation", 1);
+						Toast.makeText(
+								getApplicationContext(),
+								"设置成功",
+								Toast.LENGTH_SHORT)
+								.show();
+						
+						task = new JsonAnalysisTask(
+								MainActivity.this);
+						task.execute(choosedCity, spell);
+					}
+				})
+		.setNegativeButton("不允许",
+				new DialogInterface.OnClickListener() {
+					public void onClick(
+							DialogInterface dialog,
+							int which) {
+						writeIntoShared("useLocation", 0);
+						Toast.makeText(
+								getApplicationContext(),
+								"设置成功",
+								Toast.LENGTH_SHORT)
+								.show();
+						
+						task = new JsonAnalysisTask(
+								MainActivity.this);
+						task.execute(choosedCity, spell);
+					}
+				}).show();
+	}
+	
 	/**
 	 * 把设置写入xml文件
 	 * 
@@ -204,6 +269,7 @@ public class MainActivity extends BaseObserverActivity {
 	private void theClear() {
 		writeIntoShared("useNet", 0);
 		writeIntoShared("useSDCard", 0);
+		writeIntoShared("useLocation", 0);
 		writeIntoShared("subscribe", "");
 	}
 }

@@ -34,6 +34,8 @@ public class DAO {
 			district = cursor.getString(cursor.getColumnIndex("city_area"));
 			// if(list.contains(arg0))
 		}
+		cursor.close();
+		database.close();
 		return null;
 	}
 
@@ -167,6 +169,8 @@ public class DAO {
 		while (cursor.moveToNext()) {
 			id = cursor.getString(cursor.getColumnIndex("city_id"));
 		}
+		cursor.close();
+		database.close();
 		return id;
 	}
 	

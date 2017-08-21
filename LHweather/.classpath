@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="libs/gson-2.2.1-sources.jar"/>
 	<classpathentry kind="lib" path="libs/gson-2.2.1.jar"/>
 	<classpathentry kind="lib" path="libs/jxl.jar"/>
+	<classpathentry kind="lib" path="libs/BaiduLBS_Android.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

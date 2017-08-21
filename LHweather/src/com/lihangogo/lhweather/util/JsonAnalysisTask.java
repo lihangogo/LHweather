@@ -26,8 +26,7 @@ public class JsonAnalysisTask extends AsyncTask<String, Double, String> {
 	protected void onPostExecute(String result) {
 		super.onPostExecute(result);
 		Gson gson=new GsonBuilder().create();			
-		weather=gson.fromJson(result,QueryResultForWeatherFirst.class);
-		//Log.e("weather",""+weather);
+		weather=gson.fromJson(result,QueryResultForWeatherFirst.class);		
 		operation();
 	}
 
