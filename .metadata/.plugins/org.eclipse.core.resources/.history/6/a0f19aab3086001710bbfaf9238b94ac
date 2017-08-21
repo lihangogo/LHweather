@@ -23,26 +23,36 @@ import com.lihangogo.lhweather.util.JsonAnalysisTask;
 public class MainActivity extends BaseObserverActivity {
 	private JsonAnalysisTask task;
 	private QueryResultForWeatherFirst weather;
-
+	private String choosedCity="CN101121003";
+	private String spell="zh";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		//theClear();
+			
+		theInit();
+	}
+	
+	/**
+	 * 初始化
+	 */
+	private void theInit(){
 		SharedPreferences sharedPreferences = getSharedPreferences("lhweather",
 				Context.MODE_PRIVATE);
 		int config = sharedPreferences.getInt("useNet", 2);
-		Log.e("config", "" + config);
+		Log.e("config", "1" + config);
 		if (config == 2 || config == 0) {
 			// 弹窗给选择
 			judgeUseNet();
 		} else if (config == 1) {
 			// 可以继续执行正常代码
 			task = new JsonAnalysisTask(this);
-			task.execute("shenyang", "zh");
+			task.execute(choosedCity, spell);
 		}
 	}
-
+	
 	@Override
 	protected void onChange(String eventType) {
 		if (EventType.UPDATE_MAIN.equals(eventType)) {
@@ -89,6 +99,11 @@ public class MainActivity extends BaseObserverActivity {
 	 * 选择是否使用网络
 	 */
 	private void judgeUseNet() {
+		try{
+			Thread.sleep(1000);
+		}catch(Exception e){
+			Log.e("ExceptionT","whywhyT");
+		}
 		new AlertDialog.Builder(MainActivity.this).setTitle("应用设置")
 				.setMessage("亲~ 是否允许本应用使用网络？")
 				.setPositiveButton("允许", new DialogInterface.OnClickListener() {
@@ -100,25 +115,33 @@ public class MainActivity extends BaseObserverActivity {
 						.setMessage("亲~ 是否允许本应用使用您的SD卡？")
 						.setPositiveButton("允许", new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
-								writeIntoShared("useSDCard", 1);														
+								writeIntoShared("useSDCard", 1);
+								Toast.makeText(getApplicationContext(), "设置成功",
+										Toast.LENGTH_SHORT).show();
+								try {
+									Thread.sleep(1000);
+								} catch (Exception e) {
+									Log.e("Exception1", "whywhy1");
+								}								
+								task = new JsonAnalysisTask(MainActivity.this);
+								task.execute(choosedCity, spell);
 							}
 						})
 						.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
-								writeIntoShared("useSDCard", 0);								
+								writeIntoShared("useSDCard", 0);
+								Toast.makeText(getApplicationContext(), "您可能会后悔的。。。",
+										Toast.LENGTH_SHORT).show();
 								try {
 									Thread.sleep(1000);
 								} catch (Exception e) {
-									Log.e("Exception", "whywhy");
+									Log.e("Exception2", "whywhy2");
 								}
-								Intent intent = new Intent();
-								intent.setClass(MainActivity.this, NoNetActivity.class);
-								startActivity(intent);
+								task = new JsonAnalysisTask(MainActivity.this);
+								task.execute(choosedCity, spell);
 							}
 						}).show();
 						
-						task = new JsonAnalysisTask(MainActivity.this);
-						task.execute("shenyang", "zh");
 					}
 				})
 				.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
@@ -151,5 +174,10 @@ public class MainActivity extends BaseObserverActivity {
 		Editor editor = sp.edit(); // 获取编辑器
 		editor.putInt(key, value);
 		editor.commit(); // 提交修改
+	}
+	
+	private void theClear(){
+		writeIntoShared("useNet", 0);
+		writeIntoShared("useSDCard", 0);
 	}
 }

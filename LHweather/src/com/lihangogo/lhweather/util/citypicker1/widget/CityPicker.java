@@ -1,11 +1,18 @@
 package com.lihangogo.lhweather.util.citypicker1.widget;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -700,14 +707,140 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
 		mCurrentCityName = "菏泽";
 		mCurrentDistrictName = "郓城";
 		if (theCitiesData == null || theCitiesData.isEmpty()) {
-			mProvinceDatas = DAO.getAllProvince(context);
-			mCitiesDatasMap = DAO.getProvince2City(context, mProvinceDatas);
-			mDistrictDatasMap = DAO.getCity2Area(context);			
+			if (!getSDCardSharedInfor()) {
+				opt();
+			} else if (getSDCardSharedInfor()) {
+				String en = Environment.getExternalStorageState();
+				if (!en.equals(Environment.MEDIA_MOUNTED)) {
+					opt();
+				} else {
+					File root = Environment.getExternalStorageDirectory();
+					File fileProvince = new File(root
+							+ "/lhweather/province.txt");
+					File folder = new File(root + "/lhweather");
+					File fileCity = new File(root + "/lhweather/city.txt");
+					File fileArea = new File(root + "/lhweather/area.txt");
+					if (!fileProvince.exists()) {
+						folder.mkdirs();
+						opt2(fileProvince, fileCity, fileArea);
+						opt3(fileProvince, fileCity, fileArea);
+						Log.e("11", mProvinceDatas[1]);
+						Log.e("2", "" + mCitiesDatasMap);
+						Log.e("3", "" + mDistrictDatasMap);
+					} else {
+						opt3(fileProvince, fileCity, fileArea);
+					}
+				}
+			}
 		} else {
 			mProvinceDatas = theProvinceData;
 			mCitiesDatasMap = theCitiesData;
 			mDistrictDatasMap = theDistrictData;
 		}
+	}
+
+	/**
+	 * 从数据库里读数据
+	 */
+	private void opt() {
+		mProvinceDatas = DAO.getAllProvince(context);
+		mCitiesDatasMap = DAO.getProvince2City(context, mProvinceDatas);
+		mDistrictDatasMap = DAO.getCity2Area(context);
+	}
+
+	/**
+	 * 把读到的数据放在sd卡的文件里
+	 * 
+	 * @param fileProvince
+	 * @param fileCity
+	 * @param fileArea
+	 */
+	private void opt2(File fileProvince, File fileCity, File fileArea) {
+		opt();
+
+		ObjectOutputStream oos1 = null;
+		ObjectOutputStream oos2 = null;
+		ObjectOutputStream oos3 = null;
+		FileOutputStream fos1 = null;
+		FileOutputStream fos2 = null;
+		FileOutputStream fos3 = null;
+
+		try {
+			fileProvince.createNewFile();
+			fos1 = new FileOutputStream(fileProvince);
+			oos1 = new ObjectOutputStream(fos1);
+			oos1.writeObject(mProvinceDatas);
+			oos1.close();
+			fos1.close();
+
+			fileCity.createNewFile();
+			fos2 = new FileOutputStream(fileCity);
+			oos2 = new ObjectOutputStream(fos2);
+			oos2.writeObject(mCitiesDatasMap);
+			oos2.close();
+			fos2.close();
+
+			fileArea.createNewFile();
+			fos3 = new FileOutputStream(fileArea);
+			oos3 = new ObjectOutputStream(fos3);
+			oos3.writeObject(mDistrictDatasMap);
+			oos3.close();
+			fos3.close();
+		} catch (Exception e) {
+			Log.e("Exception3", "whywhywhy" + e);
+		}
+	}
+
+	/**
+	 * 从sd卡的文件中读出数据并反序列化成对象
+	 * 
+	 * @param fileProvince
+	 * @param fileCity
+	 * @param fileArea
+	 */
+	private void opt3(File fileProvince, File fileCity, File fileArea) {
+		FileInputStream fis1 = null;
+		FileInputStream fis2 = null;
+		FileInputStream fis3 = null;
+		ObjectInputStream ois1 = null;
+		ObjectInputStream ois2 = null;
+		ObjectInputStream ois3 = null;
+		try {
+			fis1 = new FileInputStream(fileProvince);
+			ois1 = new ObjectInputStream(fis1);
+			mProvinceDatas = (String[]) ois1.readObject();
+			ois1.close();
+			fis1.close();
+
+			fis2 = new FileInputStream(fileCity);
+			ois2 = new ObjectInputStream(fis2);
+			mCitiesDatasMap = (HashMap<String, String[]>) ois2.readObject();
+			ois2.close();
+			fis2.close();
+
+			fis3 = new FileInputStream(fileArea);
+			ois3 = new ObjectInputStream(fis3);
+			mDistrictDatasMap = (HashMap<String, String[]>) ois3.readObject();
+			ois3.close();
+			fis3.close();
+		} catch (Exception e) {
+			Log.e("Exception5", "whywhywhy." + e);
+		}
+	}
+
+	/**
+	 * 获取用户设置的sd卡权限
+	 * 
+	 * @return
+	 */
+	private boolean getSDCardSharedInfor() {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"lhweather", Context.MODE_PRIVATE);
+		int config = sharedPreferences.getInt("useSDCard", 2);
+		if (config == 1)
+			return true;
+		else
+			return false;
 	}
 
 	/**

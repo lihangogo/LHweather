@@ -29,7 +29,6 @@
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.ObserverPattern.EventType"/>
 <fullyQualifiedTypeName name="com.example.lhweather.R.id"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="android.os.Handler.Callback"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
@@ -40,7 +39,6 @@
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.WeatherActivity"/>
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.ChooseCityActivity"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences.Editor"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
@@ -50,4 +48,11 @@
 <fullyQualifiedTypeName name="com.example.lhweather.R"/>
 <fullyQualifiedTypeName name="com.example.lhweather.R.layout"/>
 <fullyQualifiedTypeName name="com.lihangogo.lhweather.activity.MainActivity"/>
+<fullyQualifiedTypeName name="android.os.Environment"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
 </qualifiedTypeNameHistroy>

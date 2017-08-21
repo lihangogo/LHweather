@@ -133,12 +133,6 @@ public class ChooseCityActivity extends Activity {
 			}
 		}
 		handler.sendEmptyMessage(DB_COPY_COMPLETE);
-		/*
-		 * SQLiteDatabase dd=helper.getReadableDatabase(); Cursor
-		 * c=dd.rawQuery("select * from t_city",null); while(c.moveToNext()){
-		 * String ss=c.getString(c.getColumnIndex("city_area")); Log.e("ss",ss);
-		 * }
-		 */
 	}
 
 	private Handler handler = new Handler(new Callback() {
